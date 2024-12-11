@@ -1,0 +1,1576 @@
+{
+	"info": {
+		"_postman_id": "e6b55cb2-5218-49ed-a87a-6faabfff4aba",
+		"name": "SendEach API - Docs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26713633"
+	},
+	"item": [
+		{
+			"name": "SMS Module",
+			"item": [
+				{
+					"name": "Send SMS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BEARER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"device_id\": \"TP1A.220624.014\",\r\n    \"recipients\": [\"923243708592\"],\r\n    \"message\": \"Testing the sms API\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APP_URL}}/send_sms",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"send_sms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BEARER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{APP_URL}}/user",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Whatsapp Module",
+			"item": [
+				{
+					"name": "OTP API",
+					"item": [
+						{
+							"name": "Send OTP",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"919876543210\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APP_URL}}/whatsapp/otp/send",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"whatsapp",
+										"otp",
+										"send"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "business",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success sent",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"phone\": 123456789\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APP_URL}}/whatsapp/otp/send",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"whatsapp",
+												"otp",
+												"send"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "business",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 01 May 2023 07:41:59 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.10"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X76d6478e898b37e13e77d7c530f22cf4"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"message\": \"OTP has been sent successfully.\"\n    },\n    \"token\": \"eyJpdiI6IkgrNVJSY3oxeXovZCtHR0MyZlVUeFE9PSIsInZhbHVlIjoidWZqQkd2bEhrTXUvYSthWVZkWjVVMkhkdzRIWFBEdkxhNExmSmRUWmprVW5YTEFIeEZrNm55emc5SkNFbUdQSHYydzhVV0x6RFRVQVVyckVEU2kwbHZuRGJ0VVZudElLTlhwMC94WXJudXBIcFQ1N0J5TG5yUTVZTy9qbVJLMDU2WjRNWURqclhLRjR2U1ptVVBwbUZBPT0iLCJtYWMiOiI1NDM0NzJlMzJmYWU1N2NhYjQ3NGVkMTNmZGFlODgwOTBhMDNlZDY4ZjY5MTdhOWZmYmIzNzg4N2Q2YjQ4NmNhIiwidGFnIjoiIn0=\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify OTP",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\": \"4584\",\r\n    \"token\": \"eyJpdiI6InFPdTAxeTQxR05na3p6cFFuL0FHWnc9PSIsInZhbHVlIjoid29Nai8wQXVtckJuVkNnbjExQ05wbm5NYm9Vd1BVbGhhdWwrcHVWRXgrOGFhbVlkbUhWUlYwQ25RMXh4d3VJbnQzOFZ1OFpMb210czZUNm9JNU9iQ1FlUWUwNmxDeXhHUVZ3aVNiL1ZVRnhOUDYzQkRiVGc0NmpheUFMMlluTHhIeDZSc0lpNzJ1TXpCSGVnUjVtMGR1OXdhT2s0R29scHk3ZUQwUkNXRHlNPSIsIm1hYyI6ImU0NjU2YzIxZGJkYWMwNzBjOWU4MWZmMDMzNjg2MGE2NTI0NjliMjY5YzMxNDMyNDhjMTQ3N2NmOGFjOGQ1N2YiLCJ0YWciOiIifQ==\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APP_URL}}/whatsapp/otp/verify",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"whatsapp",
+										"otp",
+										"verify"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "business",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"otp\": \"6847\",\r\n    \"token\": \"eyJpdiI6IkgrNVJSY3oxeXovZCtHR0MyZlVUeFE9PSIsInZhbHVlIjoidWZqQkd2bEhrTXUvYSthWVZkWjVVMkhkdzRIWFBEdkxhNExmSmRUWmprVW5YTEFIeEZrNm55emc5SkNFbUdQSHYydzhVV0x6RFRVQVVyckVEU2kwbHZuRGJ0VVZudElLTlhwMC94WXJudXBIcFQ1N0J5TG5yUTVZTy9qbVJLMDU2WjRNWURqclhLRjR2U1ptVVBwbUZBPT0iLCJtYWMiOiI1NDM0NzJlMzJmYWU1N2NhYjQ3NGVkMTNmZGFlODgwOTBhMDNlZDY4ZjY5MTdhOWZmYmIzNzg4N2Q2YjQ4NmNhIiwidGFnIjoiIn0=\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APP_URL}}/whatsapp/otp/verify",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"whatsapp",
+												"otp",
+												"verify"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "business",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 01 May 2023 07:44:40 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.10"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X13abece88a243797108f515e82a36452"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"message\": \"OTP has been verified successfully.\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Business API",
+					"item": [
+						{
+							"name": "Get All Business Phones",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/whatsapp/phones",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"whatsapp",
+										"phones"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "284",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "sample success response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APP_URL}}/whatsapp/phones",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"whatsapp",
+												"phones"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "284",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 30 Apr 2023 13:06:18 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.10"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"phones\": [\n            {\n                \"created_at\": null,\n                \"updated_at\": \"2023-04-29T02:23:01.000000Z\",\n                \"display_phone_number\": \"15550252035\",\n                \"whatsapp_phone_number_id\": \"103973902664895\",\n                \"verified_name\": \"Test Number\",\n                \"code_verification_status\": \"NOT_VERIFIED\",\n                \"quality_rating\": \"GREEN\",\n                \"whatsapp_business_id\": \"117346584646737\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Send Whatsapp Business Message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"recipent_type\" : \"toNumberInput\", // Allowed: toNumberInput,toNumbersFromFileInput,toNumberGroupInput,\r\n    \"number\": \"1234567890\", // Can be numbers seperated with comma ex: 1234454566, 1242323123. Required if recipent type is toNumberInput\r\n    \"schedule\": \"1\", //Allowed 1(send now),2(send later),\r\n    // \"schedule_date\" : \"2023-04-30T18:06\",\r\n    \"template_var_BODY\" : [\"1234\"], // Can be null or array values\r\n    \"template_var_HEADER\": null,\r\n    \"group_id\" : null, // Array of group ids. Required if recipent_type is toNumberGroupInput\r\n    \"template_id\": \"233398695907903\",// Required to send Business message,\r\n    \"whatsapp_phone_number_id\": \"103973902664895\" // It is send device. Required to send message.\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APP_URL}}/whatsapp/business/send",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"whatsapp",
+										"business",
+										"send"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "business",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Sample Error Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"recipent_type\" : \"toNumberInput\", // Allowed: toNumberInput,toNumbersFromFileInput,toNumberGroupInput,\r\n    \"number\": \"123456789\", // Can be numbers seperated with comma ex: 1234454566, 1242323123. Required if recipent type is toNumberInput\r\n    \"schedule\": \"2\", //Allowed 1(send now),2(send later),\r\n    \"schedule_date\" : \"2023-04-30T18:06\",\r\n    \"template_var_BODY\" : [\"1234\"], // Can be null or array values\r\n    \"template_var_HEADER\": null,\r\n    \"group_id\" : null, // Array of group ids. Required if recipent_type is toNumberGroupInput\r\n    \"template_id\": \"1232131231\",// Required to send Business message,\r\n    \"whatsapp_phone_number_id\": \"123123\" // It is send device. Required to send message.\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APP_URL}}/whatsapp/business/send",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"whatsapp",
+												"business",
+												"send"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "business",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 29 Apr 2023 12:45:07 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.10"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=99"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"errors\": {\n        \"recipent_type\": [\n            \"The recipent type field is required.\"\n        ],\n        \"whatsapp_phone_number_id\": [\n            \"The whatsapp phone number id field is required.\"\n        ],\n        \"schedule\": [\n            \"The schedule field is required.\"\n        ],\n        \"template_id\": [\n            \"The template id field is required.\"\n        ]\n    },\n    \"status\": \"failed\"\n}"
+								},
+								{
+									"name": "Error No Credit",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"recipent_type\" : \"toNumberInput\", // Allowed: toNumberInput,toNumbersFromFileInput,toNumberGroupInput,\r\n    \"number\": \"916374363396\", // Can be numbers seperated with comma ex: 1234454566, 1242323123. Required if recipent type is toNumberInput\r\n    \"schedule\": \"2\", //Allowed 1(send now),2(send later),\r\n    \"schedule_date\" : \"2023-04-30T18:06\",\r\n    \"template_var_BODY\" : [\"1234\"], // Can be null or array values\r\n    \"template_var_HEADER\": null,\r\n    \"group_id\" : null, // Array of group ids. Required if recipent_type is toNumberGroupInput\r\n    \"template_id\": \"233398695907903\",// Required to send Business message,\r\n    \"whatsapp_phone_number_id\": \"103973902664895\" // It is send device. Required to send message.\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APP_URL}}/whatsapp/business/send",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"whatsapp",
+												"business",
+												"send"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "business",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 30 Apr 2023 11:22:46 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.10"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "Xf7a5bbfa146ad518cb3db4753566b21d"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The given data was invalid.\",\n    \"errors\": [\n        [\n            \"You don't have enough credits to use sendEach Whatsapp Business Gateway. Please Buy Some Credits.\"\n        ]\n    ]\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"recipent_type\" : \"toNumberInput\", // Allowed: toNumberInput,toNumbersFromFileInput,toNumberGroupInput,\r\n    \"number\": \"916374363396\", // Can be numbers seperated with comma ex: 1234454566, 1242323123. Required if recipent type is toNumberInput\r\n    \"schedule\": \"2\", //Allowed 1(send now),2(send later),\r\n    \"schedule_date\" : \"2023-04-30T18:06\",\r\n    \"template_var_BODY\" : [\"1234\"], // Can be null or array values\r\n    \"template_var_HEADER\": null,\r\n    \"group_id\" : null, // Array of group ids. Required if recipent_type is toNumberGroupInput\r\n    \"template_id\": \"233398695907903\",// Required to send Business message,\r\n    \"whatsapp_phone_number_id\": \"103973902664895\" // It is send device. Required to send message.\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APP_URL}}/whatsapp/business/send",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"whatsapp",
+												"business",
+												"send"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "business",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 30 Apr 2023 11:23:16 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.10"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "Xa9290d43fea909a6c7d48f27de4faeeb"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=99"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"log_ids\": [\n            283\n        ],\n        \"message\": \"Message Sent Successfully\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get All Business Templates",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/whatsapp/templates",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"whatsapp",
+										"templates"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "284",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "sample success response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APP_URL}}/whatsapp/templates",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"whatsapp",
+												"templates"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "284",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 30 Apr 2023 13:05:43 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.1.10"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"templates\": [\n            {\n                \"created_at\": null,\n                \"updated_at\": \"2023-04-29T02:22:51.000000Z\",\n                \"whatsapp_template_id\": \"3439904579660329\",\n                \"whatsapp_business_id\": \"117346584646737\",\n                \"name\": \"otp\",\n                \"category\": \"AUTHENTICATION\",\n                \"language\": \"en\",\n                \"rejected_reason\": \"\",\n                \"components\": [\n                    {\n                        \"text\": \"Here is your SendEach Login OTP {{1}}.\",\n                        \"type\": \"BODY\",\n                        \"example\": {\n                            \"body_text\": [\n                                [\n                                    \"4835\"\n                                ]\n                            ]\n                        }\n                    },\n                    {\n                        \"text\": \"Please don't share it with anyone.\",\n                        \"type\": \"FOOTER\"\n                    }\n                ]\n            },\n            {\n                \"created_at\": null,\n                \"updated_at\": \"2023-04-29T02:22:52.000000Z\",\n                \"whatsapp_template_id\": \"1239320803391537\",\n                \"whatsapp_business_id\": \"117346584646737\",\n                \"name\": \"sendeach_admin_alerts\",\n                \"category\": \"MARKETING\",\n                \"language\": \"en\",\n                \"rejected_reason\": \"\",\n                \"components\": [\n                    {\n                        \"text\": \"Hi {{1}},\\nWe have updated our client apps with new features. Please update now and check them out!\",\n                        \"type\": \"BODY\",\n                        \"example\": {\n                            \"body_text\": [\n                                [\n                                    \"Username\"\n                                ]\n                            ]\n                        }\n                    },\n                    {\n                        \"text\": \"Not interested? Tap Stop promotions\",\n                        \"type\": \"FOOTER\"\n                    },\n                    {\n                        \"type\": \"BUTTONS\",\n                        \"buttons\": [\n                            {\n                                \"text\": \"Stop promotions\",\n                                \"type\": \"QUICK_REPLY\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"created_at\": null,\n                \"updated_at\": \"2023-04-29T02:22:53.000000Z\",\n                \"whatsapp_template_id\": \"233398695907903\",\n                \"whatsapp_business_id\": \"117346584646737\",\n                \"name\": \"hello_world\",\n                \"category\": \"ACCOUNT_UPDATE\",\n                \"language\": \"en_US\",\n                \"rejected_reason\": \"\",\n                \"components\": [\n                    {\n                        \"text\": \"Hello World\",\n                        \"type\": \"HEADER\",\n                        \"format\": \"TEXT\"\n                    },\n                    {\n                        \"text\": \"Welcome and congratulations!! This message demonstrates your ability to send a WhatsApp message notification from the Cloud API, hosted by Meta. Thank you for taking the time to test with us.\",\n                        \"type\": \"BODY\"\n                    },\n                    {\n                        \"text\": \"WhatsApp Business Platform sample message\",\n                        \"type\": \"FOOTER\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get All Messages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{APP_URL}}/whatsapp/messages",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"whatsapp",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "web",
+									"description": "Type can web or business",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "",
+									"description": "pending (1), delivered(4), failed(3), processing(5), scheduled(2),",
+									"disabled": true
+								},
+								{
+									"key": "start_date",
+									"value": "2023-04-1 12:08:57",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2023-04-30 12:08:57",
+									"disabled": true
+								},
+								{
+									"key": "log_ids",
+									"value": "311",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "with filters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{APP_URL}}/whatsapp/messages?status&start_date=2023-04-1 12:08:57&end_date=2023-04-30 12:08:57&log_ids=1",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"whatsapp",
+										"messages"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": null,
+											"description": "pending (1), delivered(4), failed(3), processing(5), scheduled(2),"
+										},
+										{
+											"key": "start_date",
+											"value": "2023-04-1 12:08:57"
+										},
+										{
+											"key": "end_date",
+											"value": "2023-04-30 12:08:57"
+										},
+										{
+											"key": "log_ids",
+											"value": "1",
+											"description": "Log ids to filter the whatsapp messages sent"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 29 Apr 2023 13:03:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": 70,\n            \"whatsapp_business_id\": \"117346584646737\",\n            \"user_id\": 3\n        },\n        {\n            \"id\": 69,\n            \"whatsapp_business_id\": \"117346584646737\",\n            \"user_id\": 3\n        },\n        {\n            \"id\": 2,\n            \"whatsapp_business_id\": null,\n            \"user_id\": 3\n        }\n    ],\n    \"first_page_url\": \"https://sendeach.test/api/whatsapp/messages?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"https://sendeach.test/api/whatsapp/messages?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"&laquo; Previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"https://sendeach.test/api/whatsapp/messages?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"Next &raquo;\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"https://sendeach.test/api/whatsapp/messages\",\n    \"per_page\": 20,\n    \"prev_page_url\": null,\n    \"to\": 3,\n    \"total\": 3\n}"
+						},
+						{
+							"name": "Sample Success Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{APP_URL}}/whatsapp/messages",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"whatsapp",
+										"messages"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "web",
+											"description": "Type can web or business",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "",
+											"description": "pending (1), delivered(4), failed(3), processing(5), scheduled(2),",
+											"disabled": true
+										},
+										{
+											"key": "start_date",
+											"value": "2023-04-1 12:08:57",
+											"disabled": true
+										},
+										{
+											"key": "end_date",
+											"value": "2023-04-30 12:08:57",
+											"disabled": true
+										},
+										{
+											"key": "log_ids",
+											"value": "311",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 01 May 2023 08:37:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": 323,\n            \"whatsapp_id\": 5,\n            \"user_id\": 25,\n            \"to\": \"1234567890\",\n            \"initiated_time\": \"2023-05-01 08:27:47\",\n            \"message\": \"Hello User\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:27:47.000000Z\",\n            \"updated_at\": \"2023-05-01T08:27:47.000000Z\",\n            \"whatsapp_business_id\": null,\n            \"whatsapp_phone_number_id\": null,\n            \"whatsapp_template_id\": null,\n            \"gateway\": \"web\"\n        },\n        {\n            \"id\": 322,\n            \"whatsapp_id\": 5,\n            \"user_id\": 25,\n            \"to\": \"9876543210\",\n            \"initiated_time\": \"2023-05-01 08:27:47\",\n            \"message\": \"Hello User\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:27:47.000000Z\",\n            \"updated_at\": \"2023-05-01T08:27:47.000000Z\",\n            \"whatsapp_business_id\": null,\n            \"whatsapp_phone_number_id\": null,\n            \"whatsapp_template_id\": null,\n            \"gateway\": \"web\"\n        },\n        {\n            \"id\": 321,\n            \"whatsapp_id\": null,\n            \"user_id\": 25,\n            \"to\": \"1234567890\",\n            \"initiated_time\": \"2023-05-01 08:27:33\",\n            \"message\": \"Welcome and congratulations!! This message demonstrates your ability to send a WhatsApp message notification from the Cloud API, hosted by Meta. Thank you for taking the time to test with us.\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:27:33.000000Z\",\n            \"updated_at\": \"2023-05-01T08:27:33.000000Z\",\n            \"whatsapp_business_id\": \"117346584646737\",\n            \"whatsapp_phone_number_id\": \"103973902664895\",\n            \"whatsapp_template_id\": \"233398695907903\",\n            \"gateway\": \"business\"\n        },\n        {\n            \"id\": 320,\n            \"whatsapp_id\": 5,\n            \"user_id\": 25,\n            \"to\": \"1234567890\",\n            \"initiated_time\": \"2023-05-01 08:24:35\",\n            \"message\": \"Hello User\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:24:35.000000Z\",\n            \"updated_at\": \"2023-05-01T08:24:35.000000Z\",\n            \"whatsapp_business_id\": null,\n            \"whatsapp_phone_number_id\": null,\n            \"whatsapp_template_id\": null,\n            \"gateway\": \"web\"\n        },\n        {\n            \"id\": 319,\n            \"whatsapp_id\": 5,\n            \"user_id\": 25,\n            \"to\": \"9876543210\",\n            \"initiated_time\": \"2023-05-01 08:24:35\",\n            \"message\": \"Hello User\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:24:35.000000Z\",\n            \"updated_at\": \"2023-05-01T08:24:35.000000Z\",\n            \"whatsapp_business_id\": null,\n            \"whatsapp_phone_number_id\": null,\n            \"whatsapp_template_id\": null,\n            \"gateway\": \"web\"\n        },\n        {\n            \"id\": 318,\n            \"whatsapp_id\": 5,\n            \"user_id\": 25,\n            \"to\": \"1234567890\",\n            \"initiated_time\": \"2023-05-01 08:24:27\",\n            \"message\": \"Hello User\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:24:27.000000Z\",\n            \"updated_at\": \"2023-05-01T08:24:27.000000Z\",\n            \"whatsapp_business_id\": null,\n            \"whatsapp_phone_number_id\": null,\n            \"whatsapp_template_id\": null,\n            \"gateway\": \"web\"\n        },\n        {\n            \"id\": 317,\n            \"whatsapp_id\": 5,\n            \"user_id\": 25,\n            \"to\": \"9876543210\",\n            \"initiated_time\": \"2023-05-01 08:24:27\",\n            \"message\": \"Hello User\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:24:27.000000Z\",\n            \"updated_at\": \"2023-05-01T08:24:27.000000Z\",\n            \"whatsapp_business_id\": null,\n            \"whatsapp_phone_number_id\": null,\n            \"whatsapp_template_id\": null,\n            \"gateway\": \"web\"\n        },\n        {\n            \"id\": 316,\n            \"whatsapp_id\": 11,\n            \"user_id\": 25,\n            \"to\": \"1234567890\",\n            \"initiated_time\": \"2023-05-01 08:23:22\",\n            \"message\": \"Hello User\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:23:22.000000Z\",\n            \"updated_at\": \"2023-05-01T08:23:22.000000Z\",\n            \"whatsapp_business_id\": null,\n            \"whatsapp_phone_number_id\": null,\n            \"whatsapp_template_id\": null,\n            \"gateway\": \"web\"\n        },\n        {\n            \"id\": 315,\n            \"whatsapp_id\": 11,\n            \"user_id\": 25,\n            \"to\": \"9876543210\",\n            \"initiated_time\": \"2023-05-01 08:23:22\",\n            \"message\": \"Hello User\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:23:22.000000Z\",\n            \"updated_at\": \"2023-05-01T08:23:22.000000Z\",\n            \"whatsapp_business_id\": null,\n            \"whatsapp_phone_number_id\": null,\n            \"whatsapp_template_id\": null,\n            \"gateway\": \"web\"\n        },\n        {\n            \"id\": 314,\n            \"whatsapp_id\": 7,\n            \"user_id\": 25,\n            \"to\": \"12344556778\",\n            \"initiated_time\": \"2023-05-01 08:22:58\",\n            \"message\": \"Hello User\",\n            \"document\": null,\n            \"audio\": null,\n            \"image\": null,\n            \"video\": null,\n            \"status\": 1,\n            \"schedule_status\": 1,\n            \"response_gateway\": null,\n            \"created_at\": \"2023-05-01T08:22:58.000000Z\",\n            \"updated_at\": \"2023-05-01T08:22:58.000000Z\",\n            \"whatsapp_business_id\": null,\n            \"whatsapp_phone_number_id\": null,\n            \"whatsapp_template_id\": null,\n            \"gateway\": \"web\"\n        }\n    ],\n    \"first_page_url\": \"https://sendeach.test/api/whatsapp/messages?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"https://sendeach.test/api/whatsapp/messages?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"&laquo; Previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"https://sendeach.test/api/whatsapp/messages?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"Next &raquo;\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"https://sendeach.test/api/whatsapp/messages\",\n    \"per_page\": 20,\n    \"prev_page_url\": null,\n    \"to\": 10,\n    \"total\": 10\n}"
+						}
+					]
+				},
+				{
+					"name": "Send Whatsapp Web/Desktop Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipients\": [\"12324567890\"],\r\n    \"whatsapp_device\": null, // Optional, if nothing givens then random device is chosen and sent\r\n    \"message\": \"Hello User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sendeach.com/api/whatsapp/send",
+							"protocol": "https",
+							"host": [
+								"sendeach",
+								"com"
+							],
+							"path": [
+								"api",
+								"whatsapp",
+								"send"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "business",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"recipients\": [\"9876543210\", \"1234567890\"],\r\n    \"whatsapp_device\": null, // Optional, if nothing givens then random device is chosen and sent\r\n    \"message\": \"Hello User\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APP_URL}}/whatsapp/send",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"whatsapp",
+										"send"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "business",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 01 May 2023 08:24:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X226ad6be97812716663fe617f69f9adf"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"log_ids\": [\n            {\n                \"whatsapp_id\": 5,\n                \"user_id\": 25,\n                \"to\": \"1234567890\",\n                \"initiated_time\": \"2023-05-01T08:24:35.990942Z\",\n                \"message\": \"Hello User\",\n                \"status\": 1,\n                \"gateway\": \"web\",\n                \"updated_at\": \"2023-05-01T08:24:35.000000Z\",\n                \"created_at\": \"2023-05-01T08:24:35.000000Z\",\n                \"id\": 320\n            }\n        ],\n        \"message\": \"New WhatsApp Message request sent, please see in the WhatsApp Log history for final status\"\n    }\n}"
+						},
+						{
+							"name": "Sample Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APP_URL}}/whatsapp/send",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"whatsapp",
+										"send"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "business",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 01 May 2023 08:25:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xd4bd1518afc392ea89b56be678224103"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n        \"message\": [\n            \"The message field is required.\"\n        ],\n        \"recipients\": [\n            \"The recipients field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Email Module",
+			"item": [
+				{
+					"name": "Send Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": [\"test@sendeach.com\"], // Required | Array of to email values\r\n    \"message\": \"SendEach Test message body content\", // Required\r\n    \"subject\": \"SendEach Email Test\",\r\n    \"from_name\": \"SendEach From Name\", // optional\r\n    \"reply_to_email\": \"SendEach-reply@sendeach.com\" // optional\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{APP_URL}}/email/send",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"email",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{AUTH_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APP_URL",
+			"value": "https://sendeach.com/api",
+			"type": "string"
+		},
+		{
+			"key": "OTP_TOKEN",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "BEARER_TOKEN",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "USER_ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "AUTH_TOKEN",
+			"value": ""
+		},
+		{
+			"key": "WHATSAPP_GATEWAY",
+			"value": "business",
+			"disabled": true
+		}
+	]
+}
